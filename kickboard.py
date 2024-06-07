@@ -7,11 +7,12 @@ import sys
 
 pathlib.PosixPath = pathlib.WindowsPath
 
-model_path = 'best_1.pt'
+model_path = 'best.pt'
 model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path)
 
-video_path = 'k2.mp4'
+video_path = '1107_1.mp4'
 cap = cv2.VideoCapture(video_path)
+# cap = cv2.VideoCapture(0) 
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1080)
 if not cap.isOpened():
@@ -49,6 +50,8 @@ def is_crossing_line(x, prev_x, line_x):
 
 prev_centers = {}
 
+line_points = [(1080, h), (1080, int(h / 2) - 50)]
+
 while cap.isOpened():
     success, frame = cap.read()
     if not success:
@@ -77,16 +80,28 @@ while cap.isOpened():
             if is_crossing_line(center_x, prev_center_x, line_points[0][0]) and tid not in crossed_ids:
                 if cls_id == 0:  # Helmet
                     helmet_count += 1
+
                 elif cls_id == 1:  # No Helmet
                     no_helmet_count += 1
+                    
                 crossed_ids.add(tid)
 
         prev_centers[tid] = (center_x, center_y)
-        cv2.rectangle(frame, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (255, 0, 0), 2)
-        cv2.putText(frame, f"{cls_name} {tid}", (int(bbox[0]), int(bbox[1] - 10)), cv2.FONT_HERSHEY_SIMPLEX,
-                    0.9, (255, 0, 0), 2)
+        
+        # box color
+        if cls_id == 0:  # Helmet
+            box_color = (0, 255, 0)  # Green
+        elif cls_id == 1:  # No Helmet
+            box_color = (0, 0, 255)  # Red
+        else:
+            box_color = (255, 0, 0)  # Default to blue for any other classes
+        
+        cv2.rectangle(frame, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), box_color, 2)
+        cv2.putText(frame, f"{cls_name}", (int(bbox[0]), int(bbox[1] - 10)), cv2.FONT_HERSHEY_SIMPLEX,
+                    0.9, box_color, 2)
 
-    cv2.line(frame, line_points[0], line_points[1], (0, 255, 255), 2)
+    # 두껍게 하고 길이 설정
+    cv2.line(frame, line_points[0], line_points[1], (0, 255, 255), 6)
     cv2.putText(frame, f"Helmet Count: {helmet_count}", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
     cv2.putText(frame, f"No Helmet Count: {no_helmet_count}", (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
