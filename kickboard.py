@@ -10,7 +10,7 @@ pathlib.PosixPath = pathlib.WindowsPath
 model_path = 'best.pt'
 model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path)
 
-video_path = '1107_1.mp4'
+video_path = '1107.mp4'
 cap = cv2.VideoCapture(video_path)
 # cap = cv2.VideoCapture(0) 
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
