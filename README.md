@@ -75,5 +75,5 @@ VM VirtualBox의 ubuntu 환경에서 Lidar 구동, 구동을 위한 다음 단�
 
 Euclidean_clustering 알고리즘을 이용한 Velodyne Lidar 구동 사진
 
-해당 클러스터링은 [lidar clustering bench](https://github.com/cavayangtao/lidar_clustering_bench?tab=readme-ov-file)의 도움을 받앋다.
+해당 클러스터링은 [lidar clustering bench](https://github.com/cavayangtao/lidar_clustering_bench?tab=readme-ov-file)의 도움을 받았다.
 ![Lidar](image/lidar.png)
