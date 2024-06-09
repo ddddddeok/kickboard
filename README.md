@@ -25,10 +25,24 @@ VLP16 Velodyne Lidar를 Euclidean_clustering 알고리즘을 이용하여 3D poi
 
 ## 설치
 1. YOLOv5 저장소를 클론한다:
+```
 git clone <https://github.com/ultralytics/yolov5.git>
+```
 
 2. 필요한 파이썬 패키지를 설치한다:
+```
 pip install -r requirements.txt
+```
+
+## 학습
+train 폴더의 YOLOv5 폴더를 이용하여 학습시킬 수 있다.
+
+YOLOv5m 가중치를 train/yolov5 폴더에 넣고 
+
+```
+python train.py --img 640 --batch 16 --epochs 50 --data (데이터 위치) --weights yolov5m.pt
+```
+명령어를 입력하면 학습이 가능하다.
 
 
 ## 사용 방법
