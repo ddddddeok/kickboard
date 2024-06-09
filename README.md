@@ -51,7 +51,6 @@ python frame_split.py
 kickboard helemet detection을 이용한 결과 사진
   ![kickboard](https://github.com/ddddddeok/kickboard/assets/102820807/1e22fb2e-c235-4a74-80fd-a86b2d18f08f)
 
-
 # Lidar
 VM VirtualBox의 ubuntu 환경에서 Lidar 구동, 구동을 위한 다음 단계:
 - ubuntu와 Lidar의 네트워크 설정정
@@ -59,3 +58,6 @@ VM VirtualBox의 ubuntu 환경에서 Lidar 구동, 구동을 위한 다음 단�
 - VLP16 Driver 설치 <https://github.com/ros-drivers/velodyne.git> 파일 이용
 - Euclidean_clustering 파일을 catkin_ws 의 src 파일내에 저장
 - Rviz를 이용한 데이터 시각화
+
+Euclidean_clustering 알고리즘을 이용한 Velodyne Lidar 구동 사진
+![Lidar](https://github.com/ddddddeok/kickboard/assets/102820807/f5a0afe6-90ff-48bc-9ac2-c92ec9b7434e)
