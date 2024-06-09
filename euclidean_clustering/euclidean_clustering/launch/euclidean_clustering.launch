@@ -1,0 +1,11 @@
+<!-- -*- mode: XML -*- -->
+<!-- run velodyne_laserscan/LaserScanNodelet in a nodelet manager -->
+
+<launch>
+  <node pkg="euclidean_clustering" name="euclidean_clustering" type="euclidean_clustering">
+    <param name="print_fps" value="true"/>
+  </node>
+
+  
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find euclidean_clustering)/launch/euclidean_clustering.rviz"/>
+</launch>
