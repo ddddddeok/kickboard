@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ```
 
 ## 학습
-train 폴더의 YOLOv5 폴더를 이용하여 학습시킬 수 있다.
+YOLOv5 저장소를 복제하였다면, train.py 로 모델을 학습시킬 수 있다.
 
 YOLOv5m 가중치를 train/yolov5 폴더에 넣고 
 
