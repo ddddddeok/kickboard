@@ -34,7 +34,7 @@ def parse_annotations(folder_path, image_width, image_height):
                     output.write('\n'.join(output_lines))
 
 folder_path = r'E:\캡스톤\킥보드데이터\120.개인형 이동장치 안전 데이터\01.데이터\1.Training\라벨링데이터\TL2\CCTV\주간\맑음\실증'
-image_width = 1920  # 이미지의 너비를 지정하세요
-image_height = 1080  # 이미지의 높이를 지정하세요
+image_width = 1920  # 이미지의 너비를 지정
+image_height = 1080  # 이미지의 높이를 지정
 
 parse_annotations(folder_path, image_width, image_height)

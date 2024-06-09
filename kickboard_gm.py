@@ -1,3 +1,7 @@
+#########################################################
+# DEPRECATED
+# use kickboard.py instead
+
 import torch
 import cv2
 from deep_sort_realtime.deepsort_tracker import DeepSort
@@ -10,7 +14,7 @@ sys.path.append('models')
 temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
 
-model_path = 'weight.pt'
+model_path = 'best.pt'
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='weight.pt')
 # model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 

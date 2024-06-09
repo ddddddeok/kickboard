@@ -30,12 +30,11 @@ def json_to_txt(input_dir):
             # JSON 파일 삭제
             os.remove(input_path)
 
-# 변환할 JSON 파일이 들어 있는 최상위 디렉토리를 지정합니다.
+# 변환할 JSON 파일이 들어 있는 최상위 디렉토리를 지정
 input_directory = r'E:\캡스톤\킥보드데이터\120.개인형 이동장치 안전 데이터\01.데이터\2.Validation\라벨링데이터\VL1\블랙박스\주간\우천\연출'
 
 # 함수 호출
 json_to_txt(input_directory)
 
-# 변환 작업이 끝났음을 알리는 메시지 출력
 print("작업이 완료되었습니다.")
 

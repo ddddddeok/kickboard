@@ -12,7 +12,12 @@ model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path)
 
 video_path = '1107.mp4'
 cap = cv2.VideoCapture(video_path)
-# cap = cv2.VideoCapture(0) 
+
+#####################################
+# for camera detection
+# cap = cv2.VideoCapture(0)
+####################################
+
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1080)
 if not cap.isOpened():
