@@ -48,6 +48,10 @@ python frame_split.py
 - DeepSORT의 파라미터
 - 교차 검출을 위한 선 위치
 
+kickboard helemet detection을 이용한 결과 사진
+  ![kickboard](https://github.com/ddddddeok/kickboard/assets/102820807/1e22fb2e-c235-4a74-80fd-a86b2d18f08f)
+
+
 # Lidar
 VM VirtualBox의 ubuntu 환경에서 Lidar 구동, 구동을 위한 다음 단계:
 - ubuntu와 Lidar의 네트워크 설정정
