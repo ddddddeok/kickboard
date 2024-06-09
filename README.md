@@ -48,7 +48,7 @@ python frame_split.py
 - DeepSORT의 파라미터
 - 교차 검출을 위한 선 위치
 
-- ## Lidar
+# Lidar
 VM VirtualBox의 ubuntu 환경에서 Lidar 구동, 구동을 위한 다음 단계:
 - ubuntu와 Lidar의 네트워크 설정정
 - ROS dependencies 설치 (20.04버전 -> noetic ROS 사용)
